@@ -82,6 +82,7 @@ void HalfLayer::updateCosts(costmap_2d::Costmap2D& master_grid, int min_i, int m
                         ROS_ERROR("HalfLayer: %s", e.what());
                     }
                 }else if (master_grid.getCost(mx, my) != costmap_2d::LETHAL_OBSTACLE){
+                  // The rest of the map read it only if it is a lethel_obstacle
                   master_grid.setCost(mx, my,0);
                 }
             }
