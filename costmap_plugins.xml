@@ -1,0 +1,5 @@
+<library path="lib/libhalf_layer">
+  <class type="half_layer::HalfLayer"   base_class_type="costmap_2d::Layer">
+    <description>The plugin subscribes pointcloud to mark and clean.</description>
+  </class>
+</library>
