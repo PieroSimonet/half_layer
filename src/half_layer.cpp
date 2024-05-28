@@ -81,21 +81,11 @@ void HalfLayer::updateCosts(costmap_2d::Costmap2D& master_grid, int min_i, int m
                     } catch (std::exception& e) {
                         ROS_ERROR("HalfLayer: %s", e.what());
                     }
+                }else if (master_grid.getCost(mx, my) != costmap_2d::LETHAL_OBSTACLE){
+                  master_grid.setCost(mx, my,0);
                 }
             }
         }
-      }
-    }
-  }
-
-  for (int i = min_i; i <= max_i; i++) {
-    for (int j = min_j; j <= max_j; j++) {
-      try {
-        if ( master_grid.getCost(i, j) < LETHAL_OBSTACLE ){
-           master_grid.setCost(i, j, 0);
-        }
-      } catch (std::exception& e) {
-        ROS_ERROR("HalfLayer: %s", e.what());
       }
     }
   }
